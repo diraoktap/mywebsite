@@ -1,69 +1,241 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 
-export default function Home() {
+const workItems = [
+  {
+    title: "Kopi Sudut",
+    short: "Kopi Sudut",
+    type: "UI Design · Website pemasaran",
+    accent: "bg-[#f3eee5]",
+    primaryText: "Kopi baik, hari lebih baik.",
+    description: "Dirancang agar setiap diri kopi loyal dan mudah dilihat.",
+    cta: "Lihat produk",
+    tag: "Project konsep",
+    items: [
+      { name: "Kopi susu", price: "Rp18.000" },
+      { name: "Cold brew", price: "Rp22.000" },
+    ],
+  },
+  {
+    title: "Toko Harian",
+    short: "Toko Harian",
+    type: "UI Design · Sistem kasir web",
+    accent: "bg-[#e4efe9]",
+    primaryText: "Buat proses kasir lebih cepat dan rapi.",
+    description: "Semua produk, menu, dan transaksi disusun agar lebih jelas.",
+    cta: "Lihat produk",
+    tag: "Project konsep",
+    items: [
+      { name: "Kopi susu", price: "Rp18.000" },
+      { name: "Roti gandum", price: "Rp12.000" },
+      { name: "Biskuit", price: "Rp6.000" },
+      { name: "Air mineral", price: "Rp5.000" },
+    ],
+  },
+  {
+    title: "Ruang Rumah",
+    short: "Ruang Rumah",
+    type: "UI Design · Katalog produk",
+    accent: "bg-[#ece8f4]",
+    primaryText: "Benda sederhana. Rumah istimewa.",
+    description: "Pilihan produk dan katalog ditata agar terasa lebih rumah.",
+    cta: "Lihat produk",
+    tag: "Project konsep",
+    items: [
+      { name: "Cangkir keramik", price: "Rp85.000" },
+      { name: "Lampu meja", price: "Rp185.000" },
+    ],
+  },
+];
+
+const serviceItems = [
+  {
+    title: "UI/UX Design",
+    text: "Saya merancang antarmuka yang intuitif dan menyenangkan — dari riset pengguna, wireframe, hingga prototipe interaktif siap developer.",
+    tags: ["Figma", "Prototyping", "UX Research"],
+  },
+  {
+    title: "Web Development",
+    text: "Saya membangun website yang cepat, responsif, dan mudah dikelola dengan teknologi modern untuk kebutuhan bisnis Anda.",
+    tags: ["React", "Next.js", "Tailwind"],
+  },
+  {
+    title: "Design System",
+    text: "Saya membantu fondasi visual agar konsisten — komponen, token warna, tipografi, hingga dokumentasi yang memudahkan tim berkembang.",
+    tags: ["Component Library", "Tokens", "Documentation"],
+  },
+];
+
+const highlights = [
+  "AI strategy & discovery",
+  "UX systems for product teams",
+  "Conversion-led design sprint",
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className="min-h-screen">
+      <section className="relative flex min-h-[calc(100vh-6rem)] items-center justify-center px-6 pb-16 pt-8 md:px-10">
+        <div className="w-full max-w-5xl text-center">
+          <div className="mb-8 flex items-center justify-center gap-3">
+            <span className="h-4 w-4 rounded-full bg-brand-neon shadow-[inset_0_0_0_1px_rgba(255,255,255,0.18)]" />
+            <span className="text-sm tracking-tight text-white/70">
+              Selamat datang. Bonjour, bienvenue. Hello! Welcome.
+            </span>
+          </div>
+
+          <h1 className="text-[4rem] font-semibold leading-[0.92] tracking-[-0.06em] md:text-[7.5rem]">
+            Win AI search in every answer.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-xl">
+            I design high-converting digital experiences for ambitious teams who want clarity,
+            momentum, and better product stories in every interaction.
           </p>
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button href="#services" variant="primary" arrow>
+              Explore services
+            </Button>
+            <Button href="/about" variant="dark" arrow>
+              Meet the studio
+            </Button>
+          </div>
+
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-3 text-sm text-white/60">
+            {highlights.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 backdrop-blur-sm"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section id="work" className="border-b-1 border-white/10 py-20">
+        <div className="mx-auto max-w-6xl rounded-[1.5rem]">
+          <div className="mb-7 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <div className="mb-8 flex items-start justify-start gap-3">
+                <span className="h-4 w-4 rounded-full bg-brand-neon shadow-[inset_0_0_0_1px_rgba(255,255,255,0.18)]" />
+                <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-white/70">
+                  Selected Work
+                </span>
+              </div>
+              <p className="mt-5 text-4xl font-semibold leading-none tracking-[-0.06em] text-white">
+                Proyek yang pernah saya kerjakan.
+              </p>
+            </div>
+
+            <p className="max-w-md text-base leading-7 text-white/60 md:text-lg">
+              Kumpulan eksplorasi desain dan pengembangan. Semua contoh berikut adalah proyek konsep personal.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {workItems.map((item) => (
+              <article
+                key={item.title}
+                className="overflow-hidden rounded-[1.45rem] border border-white/10 bg-[#0f141b]"
+              >
+                <div className={`${item.accent} p-5`}>
+                  <div className="mb-3 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-black/55">
+                    <span>•••</span>
+                    <span>{item.title}</span>
+                  </div>
+
+                  <div className="rounded-[1.25rem] border border-black/10 bg-white/35 p-4 text-left">
+                    <div className="mb-4 flex items-center justify-between gap-3 text-[10px] uppercase tracking-[0.18em] text-black/55">
+                      <span>{item.type}</span>
+                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-black/15 bg-white/60 text-sm">
+                        ↗
+                      </span>
+                    </div>
+
+                    <h3 className="text-[2.1rem] font-semibold leading-[1.05] tracking-[-0.05em] text-[#111111]">
+                      {item.primaryText}
+                    </h3>
+
+                    <p className="mt-4 text-sm leading-6 text-black/60">{item.description}</p>
+
+                    <button className="mt-5 inline-flex items-center rounded-md bg-[#121212] px-3 py-2 text-[10px] font-medium uppercase tracking-[0.18em] text-white">
+                      {item.cta}
+                    </button>
+                  </div>
+
+                  <div className="mt-4 space-y-2">
+                    {item.items.slice(0, 2).map((product) => (
+                      <div key={product.name} className="flex items-center justify-between rounded-xl border border-black/10 bg-white/15 px-3 py-2 text-[11px] text-black/70">
+                        <span>{product.name}</span>
+                        <span>{product.price}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="p-5">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.22em] text-white/45">{item.short}</p>
+                      <h4 className="mt-2 text-[1.1rem] font-semibold text-white">{item.title}</h4>
+                    </div>
+                    <span className="text-xl text-white/60">↗</span>
+                  </div>
+                  <div className="mt-4 inline-flex rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white/65">
+                    {item.tag}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="services" className="border-b-1 border-white/10 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-white/60">Services</p>
+              <h2 className="mt-3 text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
+                Apa yang bisa saya bantu untuk Anda.
+              </h2>
+            </div>
+            <p className="max-w-lg text-base leading-7 text-white/65">
+              Setiap proyek saya mulai dengan mendengarkan, lalu merancang solusi yang tepat sesuai kebutuhan bisnis dan pengguna.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {serviceItems.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-[1.7rem] border border-white/10 bg-white/3 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.12)] transition duration-300 hover:-translate-y-1 hover:border-white/20"
+              >
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-xl text-brand-neon">
+                  ✦
+                </div>
+
+                <h3 className="text-[2rem] font-semibold tracking-[-0.04em] text-white">{item.title}</h3>
+                <p className="mt-4 text-base leading-8 text-white/65">{item.text}</p>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-white/10 bg-black/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white/60"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
