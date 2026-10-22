@@ -36,16 +36,16 @@ export function Button(props: ButtonProps) {
     } = props;
 
     const baseClasses =
-        "inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold transition duration-200 focus:outline-none focus:ring-2 focus:ring-white/30 transition duration-500 cursor-pointer";
+        "inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold transition duration-200 focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/30 cursor-pointer";
 
     const variantClasses = {
         primary: "bg-[#D4FF00] text-[#121212] hover:bg-[#c7f500] shadow-[0_0_18px_rgba(212,255,0,0.28)]",
         cancel: "bg-[#facc15] text-[#121212] hover:bg-[#eab308] shadow-sm",
         delete: "bg-[#ef4444] text-white hover:bg-[#dc2626] shadow-sm",
-        secondary: "border border-white/15 bg-transparent text-white hover:bg-white/5",
-        ghost: "bg-white/3 text-white hover:bg-white/5 border border-white/15",
-        light: "bg-[#f5f5f5] text-[#121212] hover:bg-[#e5e5e5] border border-white/15",
-        dark: "bg-[#121212] text-white hover:bg-[#1c1c1c] border border-white/15",
+        secondary: "border border-black/15 bg-transparent text-[#121212] hover:bg-black/5 dark:border-white/15 dark:text-white dark:hover:bg-white/5",
+        ghost: "border border-black/15 bg-black/5 text-[#121212] hover:bg-black/10 dark:border-white/15 dark:bg-white/3 dark:text-white dark:hover:bg-white/5",
+        light: "bg-[#f5f5f5] text-[#121212] hover:bg-[#e5e5e5] border border-black/10 dark:border-white/15",
+        dark: "bg-[#121212] text-white hover:bg-[#1c1c1c] border border-black/20 dark:border-white/15",
     };
 
     const finalClasses = `${baseClasses} ${variantClasses[variant]} ${className}`;

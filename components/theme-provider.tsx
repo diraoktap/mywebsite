@@ -30,11 +30,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
         setThemeState(nextTheme);
         document.documentElement.setAttribute("data-theme", nextTheme);
+        document.documentElement.classList.toggle("dark", nextTheme === "dark");
     }, []);
 
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
+        document.documentElement.classList.toggle("dark", theme === "dark");
     }, [theme]);
 
     const value = useMemo<ThemeContextValue>(

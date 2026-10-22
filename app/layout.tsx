@@ -25,12 +25,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-brand-dark text-white">
+      <body className="min-h-full bg-brand-light text-[#111111] dark:bg-brand-dark dark:text-white">
         <ThemeProvider>
           <Navbar />
           <div className="relative mx-auto max-w-7xl px-6">
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-0 w-[10px] bg-[radial-gradient(circle,_rgba(255,255,255,0.2)_0.2px,_transparent_1px)] bg-[length:5px_5px] bg-repeat-y" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-0 w-[10px] bg-[radial-gradient(circle,_rgba(255,255,255,0.2)_0.2px,_transparent_1px)] bg-[length:5px_5px] bg-repeat-y" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-0 w-[10px] bg-[radial-gradient(circle,_rgba(0,0,0,0.15)_0.2px,_transparent_1px)] dark:bg-[radial-gradient(circle,_rgba(255,255,255,0.2)_0.2px,_transparent_1px)] bg-[length:5px_5px] bg-repeat-y" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-0 w-[10px] bg-[radial-gradient(circle,_rgba(0,0,0,0.15)_0.2px,_transparent_1px)] dark:bg-[radial-gradient(circle,_rgba(255,255,255,0.2)_0.2px,_transparent_1px)] bg-[length:5px_5px] bg-repeat-y" />
             <div className="relative z-10">
               {children}
             </div>

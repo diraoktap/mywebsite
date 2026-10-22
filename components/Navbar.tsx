@@ -72,21 +72,21 @@ export default function Navbar() {
                             D
                         </div>
                         <div className="flex flex-col leading-none">
-                            <span className="text-xl font-semibold tracking-[-0.04em] text-white">
+                            <span className="text-xl font-semibold tracking-[-0.04em] text-[#111111] dark:text-white">
                                 Dira Okta
                             </span>
-                            <span className="mt-1 text-[10px] uppercase tracking-[0.18em] text-white/45">
+                            <span className="mt-1 text-[10px] uppercase tracking-[0.18em] text-black/50 dark:text-white/45">
                                 Product Designer
                             </span>
                         </div>
                     </Link>
 
-                    <div className="hidden items-center gap-8 text-sm text-white/75 md:flex">
+                    <div className="hidden items-center gap-8 text-sm text-black/70 dark:text-white/75 md:flex">
                         <div className="relative" data-work-menu>
                             <button
                                 type="button"
                                 onClick={() => setIsWorkOpen((prev) => !prev)}
-                                className="flex items-center gap-2 rounded-full px-2 py-1.5 transition hover:text-white"
+                                className="flex items-center gap-2 rounded-full px-2 py-1.5 transition hover:text-black dark:hover:text-white"
                             >
                                 <span>Work</span>
                                 <svg
@@ -109,8 +109,8 @@ export default function Navbar() {
                             </button>
 
                             {isWorkOpen && (
-                                <div className="fixed inset-x-0 top-20 z-40 bg-brand-dark">
-                                    <div className="absolute inset-0 h-screen bg-brand-dark/80 backdrop-blur-[10px]" />
+                                <div className="fixed inset-x-0 top-20 z-40 bg-brand-light dark:bg-brand-dark">
+                                    <div className="absolute inset-0 h-screen bg-brand-light/80 dark:bg-brand-dark/80 backdrop-blur-[10px]" />
                                     <div className="relative">
                                         <div className="backdrop-blur-xl">
                                             <div className="mx-auto max-w-7xl py-8">
@@ -121,19 +121,19 @@ export default function Navbar() {
                                                             href={item.href}
                                                             target="_blank"
                                                             rel="noreferrer"
-                                                            className="group/item overflow-hidden rounded-2xl border border-white/10 bg-white/3 text-left transition hover:border-white/20 hover:bg-white/5"
+                                                            className="group/item overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] text-left transition hover:border-black/20 hover:bg-black/[0.06] dark:border-white/10 dark:bg-white/3 dark:hover:border-white/20 dark:hover:bg-white/5"
                                                         >
                                                             <div className={`h-32 bg-gradient-to-br ${item.accent}`}>
-                                                                <div className="flex h-full items-center justify-center text-xl font-bold text-white/80">
+                                                                <div className="flex h-full items-center justify-center text-xl font-bold text-black/70 dark:text-white/80">
                                                                     {item.title.split(" ")[0].slice(0, 2).toUpperCase()}
                                                                 </div>
                                                             </div>
                                                             <div className="space-y-2 p-4">
                                                                 <div className="flex items-center justify-between gap-3">
-                                                                    <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                                                                    <span className="text-white/50 transition group-hover/item:text-[#D4FF00]">↗</span>
+                                                                    <h3 className="text-base font-semibold text-[#111111] dark:text-white">{item.title}</h3>
+                                                                    <span className="text-black/40 transition group-hover/item:text-[#88a800] dark:text-white/50 dark:group-hover/item:text-[#D4FF00]">↗</span>
                                                                 </div>
-                                                                <p className="text-sm leading-6 text-white/60">{item.description}</p>
+                                                                <p className="text-sm leading-6 text-black/60 dark:text-white/60">{item.description}</p>
                                                             </div>
                                                         </a>
                                                     ))}
@@ -145,10 +145,10 @@ export default function Navbar() {
                             )}
                         </div>
 
-                        <Link href="/#services" className="transition hover:text-white">
+                        <Link href="/#services" className="transition hover:text-black dark:hover:text-white">
                             Services
                         </Link>
-                        <Link href="/about" className="transition hover:text-white">
+                        <Link href="/about" className="transition hover:text-black dark:hover:text-white">
                             About
                         </Link>
                     </div>
